@@ -4,8 +4,11 @@
   "description": "Shopping list",
   "main": "server.js",
   "scripts": {
+    "client-install": "cd Client && npm install",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix Client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Yididya Samuel",
   "license": "ISC",
