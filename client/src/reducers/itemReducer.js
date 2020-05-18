@@ -3,7 +3,7 @@ import {
   ADD_ITEM,
   REMOVE_ITEM,
   ITEMS_LOADING,
-} from "../actions/types.js";
+} from "../actions/types.js.js";
 
 const initialSate = {
   items: [],
