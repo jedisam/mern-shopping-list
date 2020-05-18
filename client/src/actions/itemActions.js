@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { GET_ITEMS, ADD_ITEM, REMOVE_ITEM, ITEMS_LOADING } from "./types.js.js";
+import { GET_ITEMS, ADD_ITEM, REMOVE_ITEM, ITEMS_LOADING } from "./types.js";
 
 export const getItems = () => (dispatch) => {
   dispatch(setItemsLoading());
