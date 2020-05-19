@@ -3,6 +3,9 @@ const router = express.Router();
 // Lists model
 const List = require("../../model/List");
 
+// auth middleware
+const auth = require("../../middleware/auth");
+
 // Get all lists
 router.get("/", (req, res) => {
   List.find({})
@@ -12,7 +15,7 @@ router.get("/", (req, res) => {
 
 // add a list item, post route
 
-router.post("/", (req, res) => {
+router.post("/", auth, (req, res) => {
   let newList = new List({
     name: req.body.name,
   });
@@ -24,7 +27,7 @@ router.post("/", (req, res) => {
 
 // Delete item
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", auth, (req, res) => {
   let id = req.params.id;
   let query = { _id: id };
   List.findOne(query, (err, list) => {
